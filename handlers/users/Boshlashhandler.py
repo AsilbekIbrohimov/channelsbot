@@ -58,10 +58,10 @@ async def answer_channelname(message: types.Message, state: FSMContext):
         await info.next()
 @dp.message_handler(state=info.sub)
 async def answer_channelname(message: types.Message, state: FSMContext):
-        language = message.text
+        sub = message.text
         await state.update_data(
                 {
-                        'language': language,
+                        'sub': sub,
                 }
         )
         await message.answer("Obunachilar soni:")
@@ -112,6 +112,7 @@ async def answer_channelname(message: types.Message, state: FSMContext):
         username = data.get("username")
         admin = data.get("admin")
         language = data.get('language')
+        sub = data.get('sub')
         price = data.get('price')
         period = data.get('period')
         more = data.get('more')
@@ -122,6 +123,7 @@ async def answer_channelname(message: types.Message, state: FSMContext):
         msg += f"🇺🇿 Telegram: {username}\n"
         msg += f"👨🏻‍💻 Admin: {admin}\n"
         msg += f"🌐 Til: {language}\n"
+        msg += f"👥 Obunachilar soni: {sub}\n"
         msg += f"💰 Reklama narxi: {price}\n"
         msg += f"🕰 Murojaat qilish vaqti: {period}\n"
         msg += f"🔎 Batafsil: {more}\n"
