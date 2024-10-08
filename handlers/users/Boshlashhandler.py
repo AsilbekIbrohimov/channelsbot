@@ -11,7 +11,7 @@ from keyboards.default.submitkeyboard import submitKeyboard
 @dp.message_handler(text = 'Boshlash')#, commands='boshlash')
 async def Izlash(message: types.Message, state: FSMContext):
         await message.answer("Hozir sizga birnecha savollar beriladi. \nHar biriga javob bering. \nOxirida agar hammasi to`g`ri bo`lsa, HA tugmasini bosing va arizangiz Adminga yuboriladi.", reply_markup=ReplyKeyboardRemove())
-        await message.answer("Kanal nomini kiriting")
+        await message.answer("Kanal nomini kiriting. \nMasalan: CyberSport")
         await info.channel_name.set()
 @dp.message_handler(state=info.channel_name)
 async def answer_channelname(message: types.Message, state: FSMContext):
@@ -21,7 +21,7 @@ async def answer_channelname(message: types.Message, state: FSMContext):
                         'name': channelname,
                 }
         )
-        await message.answer("username")
+        await message.answer("Kanal usernamemini kiriting. \nMasalan: @cyber_sportuzb")
         await info.next()
 
 
@@ -33,7 +33,7 @@ async def answer_channelname(message: types.Message, state: FSMContext):
                         'username': username,
                 }
         )
-        await message.answer("Admin kontaktini kiriting")
+        await message.answer("Admin kontaktini kiriting. \nMasalan: @AdsAdmin2002")
         await info.next()
 @dp.message_handler(state=info.admin)
 async def answer_channelname(message: types.Message, state: FSMContext):
@@ -43,7 +43,7 @@ async def answer_channelname(message: types.Message, state: FSMContext):
                         'admin': admin,
                 }
         )
-        await message.answer("Kanal tili")
+        await message.answer("Kanal tili. \nMasalan: Uzbek")
         await info.next()
 
 @dp.message_handler(state=info.language)
@@ -54,7 +54,7 @@ async def answer_channelname(message: types.Message, state: FSMContext):
                         'language': language,
                 }
         )
-        await message.answer("Reklama narxlarini kiritng")
+        await message.answer("Reklama narxlarini kiritng. \nMasalan: 50 000 so`m, 5$)
         await info.next()
 @dp.message_handler(state=info.sub)
 async def answer_channelname(message: types.Message, state: FSMContext):
@@ -64,7 +64,7 @@ async def answer_channelname(message: types.Message, state: FSMContext):
                         'sub': sub,
                 }
         )
-        await message.answer("Obunachilar soni:")
+        await message.answer("Obunachilar soni. \nMasalan: 10k, 20 000")
         await info.next()
 @dp.message_handler(state=info.price)
 async def answer_channelname(message: types.Message, state: FSMContext):
@@ -74,7 +74,7 @@ async def answer_channelname(message: types.Message, state: FSMContext):
                         'price': price,
                 }
         )
-        await message.answer("Murojat qilish vaqti")
+        await message.answer("Murojat qilish vaqti. \nMasalan: 9:00-18:00")
         await info.next()
 @dp.message_handler(state=info.period)
 async def answer_channelname(message: types.Message, state: FSMContext):
@@ -84,7 +84,7 @@ async def answer_channelname(message: types.Message, state: FSMContext):
                         'period': period,
                 }
         )
-        await message.answer("Ko'proq malumot qoldiring")
+        await message.answer("Ko'proq malumot qoldiring \nReklama berish bo'yicha ko'proq ma'lumot qoldiring")
         await info.next()
 
 @dp.message_handler(state=info.more)
@@ -95,7 +95,7 @@ async def answer_channelname(message: types.Message, state: FSMContext):
                         'more': more,
                 }
         )
-        await message.answer("logotip yuboring")
+        await message.answer("Logotip yuboring \nKanal yoki profil logotipini yuboring")
         await info.next()
 
 @dp.message_handler(content_types=ContentType.PHOTO ,state=info.logo)
