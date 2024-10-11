@@ -142,6 +142,7 @@ async def answer_channelname(message: types.Message, state: FSMContext):
         channelname = data.get("name")
         username = data.get("username")
         admin = data.get("admin")
+        sub = data.get('sub')
         language = data.get('language')
         price = data.get('price')
         period = data.get('period')
@@ -153,6 +154,7 @@ async def answer_channelname(message: types.Message, state: FSMContext):
         msg += f"🇺🇿 Telegram: {username}\n"
         msg += f"👨🏻‍💻 Admin: {admin}\n"
         msg += f"🌐 Til: {language}\n"
+        msg += f"👥 Obunachilar soni: {sub}\n"
         msg += f"💰 Reklama narxi: {price}\n"
         msg += f"🕰 Murojaat qilish vaqti: {period}\n"
         msg += f"🔎 Batafsil: {more}\n"
