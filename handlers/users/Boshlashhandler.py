@@ -54,7 +54,7 @@ async def answer_channelname(message: types.Message, state: FSMContext):
                         'language': language,
                 }
         )
-        await message.answer("Reklama narxlarini kiritng. \nMasalan: 50 000 so`m, 5$")
+        await message.answer("Obunachilar soni. \nMasalan: 10k, 20 000")
         await info.next()
 @dp.message_handler(state=info.sub)
 async def answer_channelname(message: types.Message, state: FSMContext):
@@ -64,7 +64,7 @@ async def answer_channelname(message: types.Message, state: FSMContext):
                         'sub': sub,
                 }
         )
-        await message.answer("Obunachilar soni. \nMasalan: 10k, 20 000")
+        await message.answer("Reklama narxlarini kiritng. \nMasalan: 50 000 so`m, 5$")
         await info.next()
 @dp.message_handler(state=info.price)
 async def answer_channelname(message: types.Message, state: FSMContext):
